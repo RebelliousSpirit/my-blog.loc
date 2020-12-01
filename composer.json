@@ -1,0 +1,18 @@
+{
+    "require": {
+        "twig/twig": "^1.42",
+        "gabordemooij/redbean": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "system\\base\\": "system/base",
+            "system\\helpers\\": "system/helpers",
+            "system\\libraries\\": "system/libraries",
+            "system\\settings\\": "system/settings",
+            "admin\\controller\\": "admin/controller",
+            "admin\\model\\": "admin/model",
+            "default\\controller\\": "default/controller",
+            "default\\model\\": "default/model"
+        }
+    }
+}
