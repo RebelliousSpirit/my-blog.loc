@@ -3,7 +3,7 @@
 
 namespace system\helpers;
 
-trait helperMethods
+trait THelperMethods
 {
 
     public function writeLogs($message, $filename = 'logs.txt'){
