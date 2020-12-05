@@ -4,9 +4,13 @@
 namespace system\libraries;
 
 
+use system\helpers\THelperMethods;
+
 class ErrorHandler
 {
     protected $messages;
+
+    use THelperMethods;
 
     public function __construct()
     {
@@ -21,18 +25,18 @@ class ErrorHandler
 
     public function exceptionHandler($e){
 
-        $this->logErrors($e->getMessage(), $e->getFile(), $e->getLine());
+        $error_str = ' Message: ' .  $e->getMessage() . ' file: ' . $e->getFile() . ' in line: ' . $e->getLine();
 
-        $this->displayError($e->getMessage(), $e->getFile(), $e->getLine());
+        $this->logError($error_str, 'log.txt', 'Exception');
+
+        $this->displayError($error_str, $e->getCode());
 
     }
 
-    protected function logErrors($message = '', $file = '', $line = ''){
-        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$message} | Файл: {$file} | Строка: {$line}\n=====\n",
-            3, LOGS . 'logs.txt');
-    }
+    protected function displayError($message, $code = 1){
 
-    protected function displayError(){
-
+        if (DEBUG){
+            require_once CORE .
+        }
     }
 }
